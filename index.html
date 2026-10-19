@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0d0010" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- SEO y meta -->
+  <title>Una carta para ti — Yohandry</title>
+  <meta name="description" content="Una carta sincera, escrita con profundo respeto y cariño." />
+
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       PANTALLA DE ENTRADA (Audio unlock en iOS)
+  ═══════════════════════════════════════════ -->
+  <div id="entrada" class="pantalla-entrada" aria-label="Pantalla de inicio">
+    <!-- ═════════════════════════════════════════════════
+         FONDO CINEMATOGRÁFICO DE ROLLOS DE PELÍCULA (35MM)
+    ═════════════════════════════════════════════════════ -->
+    <div class="filmstrip-bg" aria-hidden="true">
+      <!-- Partitura musical y manuscrito vintage de fondo -->
+      <div class="vintage-sheet-music" aria-hidden="true">
+        <svg viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#e07aa3" stroke-width="0.75" opacity="0.32">
+            <!-- Pauta 1 -->
+            <line x1="40" y1="70" x2="860" y2="70" />
+            <line x1="40" y1="82" x2="860" y2="82" />
+            <line x1="40" y1="94" x2="860" y2="94" />
+            <line x1="40" y1="106" x2="860" y2="106" />
+            <line x1="40" y1="118" x2="860" y2="118" />
+
+            <!-- Pauta 2 -->
+            <line x1="40" y1="190" x2="860" y2="190" />
+            <line x1="40" y1="202" x2="860" y2="202" />
+            <line x1="40" y1="214" x2="860" y2="214" />
+            <line x1="40" y1="226" x2="860" y2="226" />
+            <line x1="40" y1="238" x2="860" y2="238" />
+
+            <!-- Pauta 3 -->
+            <line x1="40" y1="310" x2="860" y2="310" />
+            <line x1="40" y1="322" x2="860" y2="322" />
+            <line x1="40" y1="334" x2="860" y2="334" />
+            <line x1="40" y1="346" x2="860" y2="346" />
+            <line x1="40" y1="358" x2="860" y2="358" />
+          </g>
+          <!-- Notas musicales caligráficas -->
+          <g fill="#e07aa3" opacity="0.3">
+            <ellipse cx="140" cy="106" rx="6.5" ry="4.5" transform="rotate(-20 140 106)" />
+            <rect x="144" y="68" width="2" height="38" />
+            <ellipse cx="210" cy="94" rx="6.5" ry="4.5" transform="rotate(-20 210 94)" />
+            <rect x="214" y="58" width="2" height="36" />
+            <path d="M 145 68 Q 180 58 215 58 L 215 62 Q 180 62 145 72 Z" />
+
+            <ellipse cx="360" cy="226" rx="6.5" ry="4.5" transform="rotate(-20 360 226)" />
+            <rect x="364" y="188" width="2" height="38" />
+            <ellipse cx="430" cy="214" rx="6.5" ry="4.5" transform="rotate(-20 430 214)" />
+            <rect x="434" y="178" width="2" height="36" />
+            <path d="M 365 188 Q 400 178 435 178 L 435 182 Q 400 182 365 192 Z" />
+          </g>
+          <text x="60" y="50" font-family="'Cormorant Garamond', Georgia, serif" font-size="22" font-style="italic" fill="#ffb8d4" opacity="0.4">Amor eterno • Recuerdos de nuestro camino</text>
+        </svg>
+      </div>
+
+      <!-- Columnas de rollos de película (35mm) -->
+      <div class="filmstrip-columns">
+        <!-- Tira 1: sube lentamente -->
+        <div class="filmstrip-col col-1">
+          <div class="filmstrip-track track-up">
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>01</span></div><div class="film-photo-wrap"><img src="/fotos/1.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>02A</span></div><div class="film-photo-wrap"><img src="/fotos/2.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>MEMORIAS</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>03</span></div><div class="film-photo-wrap"><img src="/fotos/3.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>04A</span></div><div class="film-photo-wrap"><img src="/fotos/4.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>HISTORIA</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>05</span></div><div class="film-photo-wrap"><img src="/fotos/5.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>06A</span></div><div class="film-photo-wrap"><img src="/fotos/6.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>SONRISAS</span></div></div>
+            <!-- Duplicado para bucle continuo -->
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>01</span></div><div class="film-photo-wrap"><img src="/fotos/1.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>02A</span></div><div class="film-photo-wrap"><img src="/fotos/2.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>MEMORIAS</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>03</span></div><div class="film-photo-wrap"><img src="/fotos/3.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>04A</span></div><div class="film-photo-wrap"><img src="/fotos/4.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>HISTORIA</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>05</span></div><div class="film-photo-wrap"><img src="/fotos/5.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>06A</span></div><div class="film-photo-wrap"><img src="/fotos/6.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>SONRISAS</span></div></div>
+          </div>
+        </div>
+
+        <!-- Tira 2: baja lentamente -->
+        <div class="filmstrip-col col-2">
+          <div class="filmstrip-track track-down">
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>07</span></div><div class="film-photo-wrap"><img src="/fotos/7.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>08A</span></div><div class="film-photo-wrap"><img src="/fotos/8.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>DICIEMBRE</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>09</span></div><div class="film-photo-wrap"><img src="/fotos/9.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>10A</span></div><div class="film-photo-wrap"><img src="/fotos/10.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>PATRONALES</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>11</span></div><div class="film-photo-wrap"><img src="/fotos/11.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>12A</span></div><div class="film-photo-wrap"><img src="/fotos/12.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>LA VILLA</span></div></div>
+            <!-- Duplicado para bucle continuo -->
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>07</span></div><div class="film-photo-wrap"><img src="/fotos/7.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>08A</span></div><div class="film-photo-wrap"><img src="/fotos/8.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>DICIEMBRE</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>09</span></div><div class="film-photo-wrap"><img src="/fotos/9.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>10A</span></div><div class="film-photo-wrap"><img src="/fotos/10.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>PATRONALES</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>11</span></div><div class="film-photo-wrap"><img src="/fotos/11.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>12A</span></div><div class="film-photo-wrap"><img src="/fotos/12.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>LA VILLA</span></div></div>
+          </div>
+        </div>
+
+        <!-- Tira 3: sube lentamente con retrato y momentos clave -->
+        <div class="filmstrip-col col-3">
+          <div class="filmstrip-track track-up">
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK PORTRA</span><span>★</span></div><div class="film-photo-wrap"><img src="/fotos/pareja-intro.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ NOSOTROS ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>14</span></div><div class="film-photo-wrap"><img src="/fotos/2.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>EL RÍO</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>15A</span></div><div class="film-photo-wrap"><img src="/fotos/4.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>16</span></div><div class="film-photo-wrap"><img src="/fotos/6.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>CUMPLEAÑOS</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>17A</span></div><div class="film-photo-wrap"><img src="/fotos/8.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>18</span></div><div class="film-photo-wrap"><img src="/fotos/10.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>PATRONALES</span></div></div>
+            <!-- Duplicado para bucle continuo -->
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK PORTRA</span><span>★</span></div><div class="film-photo-wrap"><img src="/fotos/pareja-intro.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ NOSOTROS ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>14</span></div><div class="film-photo-wrap"><img src="/fotos/2.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>EL RÍO</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>15A</span></div><div class="film-photo-wrap"><img src="/fotos/4.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>16</span></div><div class="film-photo-wrap"><img src="/fotos/6.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>CUMPLEAÑOS</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>17A</span></div><div class="film-photo-wrap"><img src="/fotos/8.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>18</span></div><div class="film-photo-wrap"><img src="/fotos/10.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>PATRONALES</span></div></div>
+          </div>
+        </div>
+
+        <!-- Tira 4: baja lentamente (visible en desktop/tablets) -->
+        <div class="filmstrip-col col-4">
+          <div class="filmstrip-track track-down">
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>19</span></div><div class="film-photo-wrap"><img src="/fotos/11.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>20A</span></div><div class="film-photo-wrap"><img src="/fotos/3.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>EL COLEGIO</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>21</span></div><div class="film-photo-wrap"><img src="/fotos/5.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>22A</span></div><div class="film-photo-wrap"><img src="/fotos/7.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>AÑO NUEVO</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>23</span></div><div class="film-photo-wrap"><img src="/fotos/9.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>24A</span></div><div class="film-photo-wrap"><img src="/fotos/12.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>LA VILLA</span></div></div>
+            <!-- Duplicado para bucle continuo -->
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>19</span></div><div class="film-photo-wrap"><img src="/fotos/11.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>5113 PPB</span><span>20A</span></div><div class="film-photo-wrap"><img src="/fotos/3.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>EL COLEGIO</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>FUJI 200</span><span>21</span></div><div class="film-photo-wrap"><img src="/fotos/5.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>22A</span></div><div class="film-photo-wrap"><img src="/fotos/7.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>5113 PPB</span><span>AÑO NUEVO</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>ILFORD HP5</span><span>23</span></div><div class="film-photo-wrap"><img src="/fotos/9.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>SAFETY FILM</span><span>✦ Y&amp;D ✦</span></div></div>
+            <div class="film-frame"><div class="film-meta-top"><span>KODAK 400</span><span>24A</span></div><div class="film-photo-wrap"><img src="/fotos/12.jpg" alt="" class="film-img" /></div><div class="film-meta-bottom"><span>EKT 25-1</span><span>LA VILLA</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adornos vintage estáticos en la cubierta -->
+    <div class="vintage-film-spool" aria-hidden="true"></div>
+    <div class="vintage-post-stamp" aria-hidden="true">
+      <div class="stamp-circle">
+        <span class="stamp-circle-text">MEMORIAS • RECUERDOS</span>
+        <span class="stamp-center">✦</span>
+      </div>
+      <div class="stamp-waves">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Viñeta radial oscura frontal para contraste y profundidad -->
+    <div class="entrada-vignette-overlay" aria-hidden="true"></div>
+
+    <!-- Corazones 2D flotantes de fondo -->
+    <canvas id="hearts-canvas-entrada" class="hearts-bg" aria-hidden="true"></canvas>
+
+    <!-- ═════════════════════════════════════════════════
+         TARJETA CENTRAL DE BIENVENIDA (LUJOSA & ORNADA)
+    ═════════════════════════════════════════════════════ -->
+    <div class="entrada-contenido">
+      <div class="entrada-card-luxury">
+        <!-- Adornos dorados en las 4 esquinas -->
+        <span class="card-corner corner-tl" aria-hidden="true">✦</span>
+        <span class="card-corner corner-tr" aria-hidden="true">✦</span>
+        <span class="card-corner corner-bl" aria-hidden="true">✦</span>
+        <span class="card-corner corner-br" aria-hidden="true">✦</span>
+
+        <!-- Sello floral de cabecera con medallón y resplandor -->
+        <div class="icono-floral-wrap">
+          <div class="floral-aura" aria-hidden="true"></div>
+          <div class="icono-floral-medallon" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-flor-portada">
+              <ellipse cx="40" cy="20" rx="8" ry="14" fill="#a82b58" opacity="0.9" transform="rotate(0 40 40)"/>
+              <ellipse cx="40" cy="20" rx="8" ry="14" fill="#8e1d4b" opacity="0.85" transform="rotate(60 40 40)"/>
+              <ellipse cx="40" cy="20" rx="8" ry="14" fill="#be3a6c" opacity="0.9" transform="rotate(120 40 40)"/>
+              <ellipse cx="40" cy="20" rx="8" ry="14" fill="#7d133f" opacity="0.85" transform="rotate(180 40 40)"/>
+              <ellipse cx="40" cy="20" rx="8" ry="14" fill="#a82b58" opacity="0.9" transform="rotate(240 40 40)"/>
+              <ellipse cx="40" cy="20" rx="8" ry="14" fill="#992252" opacity="0.85" transform="rotate(300 40 40)"/>
+              <circle cx="40" cy="40" r="9" fill="#d44b7f"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Cinta dedicatoria -->
+        <div class="entrada-subtitulo-wrap">
+          <span class="subtitulo-guion" aria-hidden="true"></span>
+          <p class="entrada-subtitulo">Para Yohandry</p>
+          <span class="subtitulo-guion" aria-hidden="true"></span>
+        </div>
+
+        <h1 class="entrada-titulo">Hay algo que<br/>quería decirte</h1>
+        
+        <p class="entrada-descripcion">
+          Tómate el tiempo que necesites.<br/>No hay prisa. No hay ninguna exigencia.
+        </p>
+
+        <div class="entrada-btn-wrap">
+          <button id="btn-abrir" class="btn-abrir" aria-label="Abrir la carta">
+            <span class="btn-shimmer" aria-hidden="true"></span>
+            <span class="btn-texto">Abrir</span>
+            <span class="btn-icono" aria-hidden="true">♡</span>
+          </button>
+        </div>
+
+        <div class="entrada-nota-pill">
+          <span class="nota-sparkle" aria-hidden="true">✧</span>
+          <p class="entrada-nota">Experiencia con sonido y ramo interactivo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       INTRO CINEMATOGRÁFICA
+  ═══════════════════════════════════════════ -->
+  <div id="intro-container" class="intro-container hidden" aria-label="Introducción cinematográfica cósmica">
+    <canvas id="canvas-intro" class="canvas-intro" aria-hidden="true"></canvas>
+
+    <!-- Prólogo poético que aparece al nacer el cosmos -->
+    <div id="intro-prologo" class="intro-prologo" aria-hidden="true">
+      <p class="prologo-sub">En la inmensidad del universo…</p>
+      <h2 class="prologo-frase">Entre millones de estrellas y galaxias</h2>
+      <p class="prologo-destacado">La luz más hermosa siempre fuiste tú</p>
+    </div>
+
+    <button id="btn-saltar-intro" class="btn-saltar-intro hidden" aria-label="Saltar introducción">Saltar</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCIA PRINCIPAL
+  ═══════════════════════════════════════════ -->
+  <main id="experiencia" class="experiencia hidden" aria-hidden="true">
+
+    <!-- Canvas 3D: Ramo de 12 rosas procedurales fotorrealistas -->
+    <canvas id="canvas-3d" aria-label="Ramo interactivo de 12 rosas 3D" role="img"></canvas>
+
+    <!-- Corazones 2D ambientales suaves -->
+    <canvas id="hearts-canvas" class="hearts-overlay" aria-hidden="true"></canvas>
+
+    <!-- Canvas para pétalos reactivos al tacto (#11) -->
+    <canvas id="petalos-tacto-canvas" class="petalos-tacto-canvas" aria-hidden="true"></canvas>
+
+    <!-- Widget flotante de música (Dame Amor) -->
+    <div id="widget-musica" class="widget-musica hidden" role="region" aria-label="Reproductor de música de fondo">
+      <div class="musica-pill">
+        <button id="btn-musica-play" class="btn-musica-ctrl" aria-label="Pausar o reproducir música" title="Pausar / Reproducir">
+          <svg id="musica-icon-play" viewBox="0 0 24 24" class="hidden" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg>
+          <svg id="musica-icon-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
+
+        <div class="musica-info">
+          <span id="musica-titulo" class="musica-titulo">Dame Amor</span>
+          <span id="musica-artista" class="musica-artista">OfficialAlex425</span>
+        </div>
+
+        <!-- Ecualizador animado -->
+        <div id="musica-eq" class="musica-eq" aria-hidden="true">
+          <span class="eq-bar bar-1"></span>
+          <span class="eq-bar bar-2"></span>
+          <span class="eq-bar bar-3"></span>
+          <span class="eq-bar bar-4"></span>
+        </div>
+
+        <button id="btn-musica-mute" class="btn-musica-ctrl" aria-label="Silenciar música" title="Silenciar">
+          <svg id="musica-icon-vol" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          <svg id="musica-icon-mute" viewBox="0 0 24 24" class="hidden" aria-hidden="true"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+      </div>
+      <!-- Barra de progreso de audio (#6) -->
+      <div class="musica-progreso-wrap">
+        <div id="musica-progreso-bar" class="musica-progreso-bar">
+          <div id="musica-progreso-fill" class="musica-progreso-fill"></div>
+        </div>
+        <span id="musica-tiempo" class="musica-tiempo">0:00</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         FASE 1: CARTA FLORAL CON BOTÓN DE APERTURA
+    ═══════════════════════════════════════════ -->
+    <div id="carta-floral-box" class="carta-floral-box hidden" role="region" aria-label="Carta floral para Yohandry">
+      <div class="floral-card-inner">
+        <!-- Decoraciones SVG de rosas y filigrana botánica -->
+        <div class="floral-deco-top" aria-hidden="true">
+          <svg viewBox="0 0 200 40" fill="none" class="svg-guirnalda">
+            <path d="M10,20 Q60,35 100,20 Q140,5 190,20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+            <circle cx="100" cy="20" r="4" fill="#e89bb7"/>
+            <circle cx="60" cy="24" r="2.5" fill="#d44b7f"/>
+            <circle cx="140" cy="16" r="2.5" fill="#d44b7f"/>
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#c48b46" stop-opacity="0.2"/>
+                <stop offset="50%" stop-color="#f8d89a" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#c48b46" stop-opacity="0.2"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="floral-sello-cera" aria-hidden="true">
+          <div class="sello-circulo">
+            <span class="sello-letra">Y</span>
+            <div class="sello-rosa-icono">🌹</div>
+          </div>
+        </div>
+
+        <p class="floral-para">De mi corazón para ti</p>
+        <h2 class="floral-titulo">Yohandry</h2>
+        <p class="floral-subtitulo">No es un adiós; es para recordarte lo que vales y lo que siempre serás para mí…</p>
+
+        <!-- Botón requerido: Al presionar se abrirán las rosas y la carta en formato dinámico -->
+        <button id="btn-abrir-carta-floral" class="btn-abrir-carta-floral" aria-label="Abrir carta y florecer las rosas">
+          <span class="btn-aura-pulso" aria-hidden="true"></span>
+          <span class="btn-flor-icono" aria-hidden="true">🌹</span>
+          <span class="btn-floral-texto">Abrir carta y florecer rosas</span>
+          <span class="btn-flor-destello" aria-hidden="true">✨</span>
+        </button>
+
+        <p class="floral-nota">Toca para descubrir cada palabra a tu propio ritmo</p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         FASE 2: VISOR DE CARTA DINÁMICO (MOTION GRAPHICS)
+    ═══════════════════════════════════════════ -->
+    <div id="visor-carta-dinamica" class="visor-carta-dinamica hidden" role="region" aria-label="Carta dinámica en capítulos">
+      
+      <!-- Indicador de capítulos con nodos de rosas -->
+      <nav class="capitulos-tracker" aria-label="Capítulos de la carta">
+        <div class="tracker-linea-base">
+          <div id="tracker-linea-progreso" class="tracker-linea-progreso"></div>
+        </div>
+        <div id="tracker-nodos" class="tracker-nodos">
+          <!-- Generado dinámicamente: I, II, III, IV, V, VI -->
+        </div>
+      </nav>
+
+      <!-- Tarjeta dinámica activa -->
+      <article class="tarjeta-dinamica-wrap">
+        <div id="tarjeta-dinamica-card" class="tarjeta-dinamica-card">
+          <!-- Encabezado del capítulo -->
+          <div class="cap-header">
+            <span id="cap-badge" class="cap-badge">
+              <span id="cap-badge-icono" class="cap-badge-icono">✨</span>
+              <span id="cap-badge-etiqueta">Tu Luz y Tu Esencia</span>
+            </span>
+            <span id="cap-contador" class="cap-contador">Capítulo 1 de 6</span>
+          </div>
+
+          <!-- Título principal -->
+          <h2 id="cap-titulo" class="cap-titulo">Lo Maravillosa que Eres</h2>
+
+          <!-- Cita poética destacada -->
+          <div class="cap-cita-box">
+            <span class="cita-comilla" aria-hidden="true">“</span>
+            <p id="cap-cita" class="cap-cita">Tienes una nobleza y una luz que iluminan todo a tu alrededor.</p>
+          </div>
+
+          <!-- Texto emotivo del capítulo -->
+          <div class="cap-cuerpo">
+            <p id="cap-texto" class="cap-texto">
+              Quiero empezar reconociendo la persona tan increíble, pura y hermosa que eres...
+            </p>
+          </div>
+
+          <!-- Navegación entre capítulos -->
+          <div class="cap-nav-controles">
+            <button id="btn-cap-prev" class="btn-cap-nav" aria-label="Capítulo anterior">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Anterior</span>
+            </button>
+
+            <div class="cap-acciones-secundarias">
+              <button id="btn-abrir-sheet" class="btn-accion-sec" aria-label="Leer carta completa">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <span>Carta completa</span>
+              </button>
+              <button id="btn-apreciar-ramo" class="btn-accion-sec" aria-label="Apreciar ramo de cerca">
+                <span>🌹 Tu ramo</span>
+              </button>
+              <button id="btn-ver-recuerdos" class="btn-accion-sec" aria-label="Ver 12 meses">
+                <span>📸 Doce meses</span>
+              </button>
+            </div>
+
+            <button id="btn-cap-next" class="btn-cap-nav btn-cap-siguiente" aria-label="Siguiente capítulo">
+              <span>Siguiente</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sección de fotos: 12 Recuerdos vinculados al ramo 3D -->
+    <section id="seccion-doce-meses" class="seccion-doce-meses hidden" aria-label="Doce rosas, doce recuerdos">
+      <div class="doce-meses-header">
+        <p class="doce-meses-sub">Doce rosas · Doce recuerdos</p>
+        <h2 class="doce-meses-titulo">12 recuerdos por los 12 meses que compartimos</h2>
+        <p class="doce-meses-desc">Cada rosa guarda un momento inolvidable. Toca una rosa del ramo o cualquier recuerdo aquí abajo para revivirlo:</p>
+      </div>
+      <div id="galeria-doce-meses" class="galeria-grid">
+        <!-- Generado dinámicamente: 12 recuerdos con fotos reales y anécdotas -->
+      </div>
+
+      <!-- Cierre respetuoso permanente al final de la experiencia -->
+      <div class="cierre-final-fijo">
+        <p class="cierre-libertad">Siempre tendrás mi amor, mi respeto y un lugar eterno en mi corazón.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL DE RECUERDO INTERACTIVO (AL TOCAR UNA ROSA O FOTO)
+  ═══════════════════════════════════════════ -->
+  <div id="modal-recuerdo-backdrop" class="modal-recuerdo-backdrop hidden" aria-hidden="true"></div>
+  <div id="modal-recuerdo" class="modal-recuerdo hidden" role="dialog" aria-modal="true" aria-labelledby="modal-recuerdo-titulo">
+    <div class="modal-recuerdo-card">
+      <button id="btn-cerrar-recuerdo" class="btn-cerrar-recuerdo" aria-label="Cerrar recuerdo">✕</button>
+      <div class="modal-recuerdo-foto-wrap">
+        <img id="modal-recuerdo-img" class="modal-recuerdo-img" src="" alt="Recuerdo con Yohandry" />
+        <span class="modal-recuerdo-badge" id="modal-recuerdo-badge">🌹 Rosa 1</span>
+      </div>
+      <div class="modal-recuerdo-info">
+        <span class="modal-recuerdo-numero" id="modal-recuerdo-contador">Recuerdo 1 de 12</span>
+        <h3 class="modal-recuerdo-titulo" id="modal-recuerdo-titulo">Título del recuerdo</h3>
+        <p class="modal-recuerdo-texto" id="modal-recuerdo-texto">Anécdota del recuerdo...</p>
+        <div class="modal-recuerdo-nav">
+          <button id="btn-recuerdo-prev" class="btn-recuerdo-nav" aria-label="Recuerdo anterior">← Anterior</button>
+          <button id="btn-recuerdo-next" class="btn-recuerdo-nav" aria-label="Siguiente recuerdo">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL ESPECIAL: APRECIAR EL RAMO (REGALO ETERNO)
+  ═══════════════════════════════════════════ -->
+  <div id="modal-ramo-backdrop" class="modal-ramo-backdrop hidden" aria-hidden="true"></div>
+  <div id="modal-ramo-regalo" class="modal-ramo-regalo hidden" role="dialog" aria-modal="true" aria-labelledby="ramo-regalo-titulo">
+    <div class="ramo-regalo-card">
+      <button id="btn-cerrar-ramo-regalo" class="btn-cerrar-ramo-regalo" aria-label="Cerrar vista de ramo">✕</button>
+
+      <div class="ramo-regalo-corona" aria-hidden="true">
+        <span class="corona-rosa">🌹</span>
+        <span class="corona-chispa">✨</span>
+        <span class="corona-rosa">🌹</span>
+      </div>
+
+      <p class="ramo-regalo-sub">Un regalo eterno para ti</p>
+      <h3 id="ramo-regalo-titulo" class="ramo-regalo-titulo">Doce Rosas para Yohandry</h3>
+
+      <div class="ramo-regalo-dedicatoria">
+        <p class="dedicatoria-p1">
+          Como no puedo entregártelas en persona hoy, quise que tuvieras estas 12 rosas eternas: una por cada mes inolvidable que compartimos.
+        </p>
+        <p class="dedicatoria-p2">
+          Creadas con todo mi cariño, cada pétalo de terciopelo, cada gota de rocío y cada recuerdo guardado en ellas es para ti. Nunca se marchitarán.
+        </p>
+      </div>
+
+      <!-- Controles interactivos de apreciación -->
+      <div class="ramo-regalo-controles">
+        <button id="btn-ramo-acariciar" class="btn-ramo-ctrl" aria-label="Acariciar ramo y soltar pétalos">
+          <span class="ctrl-icono">🌸</span>
+          <span class="ctrl-texto">Lluvia de pétalos</span>
+        </button>
+
+        <button id="btn-ramo-giro" class="btn-ramo-ctrl" aria-label="Activar o pausar giro 360°">
+          <span id="icono-ramo-giro" class="ctrl-icono">🔄</span>
+          <span id="texto-ramo-giro" class="ctrl-texto">Giro 360°</span>
+        </button>
+
+        <button id="btn-ramo-recuerdos" class="btn-ramo-ctrl btn-ramo-secundario" aria-label="Ver anécdotas de los doce meses">
+          <span class="ctrl-icono">📸</span>
+          <span class="ctrl-texto">12 Recuerdos</span>
+        </button>
+      </div>
+
+      <p class="ramo-regalo-nota">Puedes arrastrar la pantalla para explorar cada flor y gota de cerca</p>
+    </div>
+
+    <!-- Píldora flotante para cuando la vista está despejada en Giro 360° -->
+    <div id="ramo-pill-despejado" class="ramo-pill-despejado hidden" role="toolbar" aria-label="Controles de apreciación 360">
+      <button id="btn-restaurar-dedicatoria" class="btn-pill-accion btn-pill-principal" aria-label="Ver dedicatoria y texto">
+        <span class="pill-icono" aria-hidden="true">📜</span>
+        <span class="pill-texto">Ver dedicatoria</span>
+      </button>
+
+      <button id="btn-despejado-petalos" class="btn-pill-accion" aria-label="Lluvia de pétalos de terciopelo">
+        <span class="pill-icono" aria-hidden="true">🌸</span>
+        <span class="pill-texto">Pétalos</span>
+      </button>
+
+      <button id="btn-despejado-pausar" class="btn-pill-accion" aria-label="Pausar o reanudar giro del ramo">
+        <span id="icono-despejado-pausa" class="pill-icono" aria-hidden="true">⏸️</span>
+        <span id="texto-despejado-pausa" class="pill-texto">Pausar</span>
+      </button>
+
+      <button id="btn-cerrar-vista-despejada" class="btn-pill-cerrar" aria-label="Cerrar y volver a la carta">
+        <span aria-hidden="true">✕</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HOJA INFERIOR (BOTTOM SHEET) — CARTA COMPLETA
+  ═══════════════════════════════════════════ -->
+  <div id="carta-sheet-backdrop" class="sheet-backdrop hidden" aria-hidden="true"></div>
+  <aside id="carta-sheet" class="carta-sheet" role="dialog" aria-labelledby="sheet-titulo" aria-modal="true">
+    <div class="sheet-drag-handle" aria-hidden="true"></div>
+
+    <div class="sheet-header">
+      <h2 id="sheet-titulo" class="sheet-titulo">Carta para Yohandry</h2>
+      <button id="btn-cerrar-sheet" class="btn-cerrar-sheet" aria-label="Cerrar carta completa">✕</button>
+    </div>
+
+    <div class="sheet-body">
+      <div id="carta-sheet-contenido" class="carta-sheet-texto">
+        <!-- El texto completo inalterado se inyecta por JS desde carta.js -->
+      </div>
+      <div class="sheet-firma">
+        <!-- Firma caligráfica animada SVG (#5) -->
+        <svg id="firma-svg" class="firma-animada-svg" viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg">
+          <path id="firma-trazo" class="firma-trazo"
+            d="M12,40 C18,12 28,8 36,22 C40,30 30,42 22,38 C16,35 22,18 38,22 C48,25 42,40 52,36 C58,33 55,20 62,22 C66,23 62,38 72,34 C78,31 76,20 82,24 C86,27 80,40 88,38 C93,37 96,26 100,30 C104,34 98,42 108,38 C114,35 118,20 124,24 C128,27 120,42 132,38 C138,35 144,22 148,28"/>
+        </svg>
+        <p class="firma-david">David</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Loader inicial ── -->
+  <div id="loader" class="loader hidden" aria-live="polite">
+    <div class="loader-inner">
+      <div class="loader-rosa" aria-hidden="true"></div>
+      <p class="loader-texto">Preparando el ramo…</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "carta-para-yoha",
+  "version": "1.0.0",
+  "description": "Carta de amor interactiva 3D con Three.js, ramo botánico, intro cinematográfica y portada de película",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "gsap": "^3.15.0",
+    "three": "^0.186.1"
+  }
+}
