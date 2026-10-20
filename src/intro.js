@@ -731,21 +731,22 @@ export class IntroCinematica {
       }
     });
 
-    // 0.2s – 3.2s: Prólogo poético sobre las estrellas
+    // 0.4s – 7.6s: Prólogo poético sobre las estrellas (tiempo generoso para leer con calma)
     const prologoEl = document.getElementById('intro-prologo');
     if (prologoEl) {
       this.timeline.fromTo(prologoEl,
         { opacity: 0, y: 18, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1.0, duration: 1.4, ease: 'power2.out' },
-        0.3
+        { opacity: 1, y: 0, scale: 1.0, duration: 1.5, ease: 'power2.out' },
+        0.4
       );
+      // El texto permanece visible con total nitidez durante 5 segundos completos
       this.timeline.to(prologoEl,
-        { opacity: 0, y: -16, scale: 1.04, duration: 0.9, ease: 'power2.in' },
-        3.2
+        { opacity: 0, y: -16, scale: 1.04, duration: 1.0, ease: 'power2.in' },
+        6.6
       );
     }
 
-    // 0.2s – 3.8s: Se forma la galaxia espiral desde el cosmos
+    // 0.2s – 7.4s: Se forma la galaxia espiral desde el cosmos y rota majestuosamente
     this.timeline.add(() => {
       this.morphTo(this.formas.galaxia, 3.4);
     }, 0.2);
@@ -759,12 +760,12 @@ export class IntroCinematica {
       onUpdate: () => this.camera.lookAt(0, 0, 0)
     }, 0.0);
 
-    // 4.0s – 8.2s: De la galaxia surge el nombre "Yohandry" con estrellas
+    // 7.4s – 11.8s: De la galaxia surge el nombre "Yohandry" con estrellas
     this.timeline.add(() => {
       this.morphTo(this.formas.nombre, 3.2, () => {
         this.tocarAcordeNombre();
       });
-    }, 4.0);
+    }, 7.4);
 
     const camZNombre = (this.camera && this.camera.aspect < 0.8) ? 5.2 : 3.8;
     this.timeline.to(this.camera.position, {
@@ -774,14 +775,14 @@ export class IntroCinematica {
       duration: 3.4,
       ease: 'power2.out',
       onUpdate: () => this.camera.lookAt(0, 0, 0)
-    }, 4.0);
+    }, 7.4);
 
-    // 8.2s – 12.8s: De "Yohandry" se forma el corazón con "Te amo"
+    // 11.8s – 16.2s: De "Yohandry" se forma el corazón con "Te amo"
     this.timeline.add(() => {
       this.morphTo(this.formas.corazonTeAmo, 3.0, () => {
         this.tocarLatido();
       });
-    }, 8.2);
+    }, 11.8);
 
     const camZCorazon = (this.camera && this.camera.aspect < 0.8) ? 4.9 : 3.6;
     this.timeline.to(this.camera.position, {
@@ -791,32 +792,32 @@ export class IntroCinematica {
       duration: 3.0,
       ease: 'power2.out',
       onUpdate: () => this.camera.lookAt(0, 0, 0)
-    }, 8.2);
+    }, 11.8);
 
-    // 11.8s – 12.8s: El corazón reúne energía y brilla intensamente
+    // 15.2s – 16.2s: El corazón reúne energía y brilla intensamente
     this.timeline.to(this.uniforms.uHeartGlow, {
       value: 2.8,
       duration: 1.0,
       ease: 'power2.in'
-    }, 11.8);
+    }, 15.2);
 
-    // 12.8s: ¡EXPLOSIÓN! de partículas en supernova
+    // 16.2s: ¡EXPLOSIÓN! de partículas en supernova
     this.timeline.add(() => {
       this.tocarExplosionCosmica();
-    }, 12.8);
+    }, 16.2);
 
     this.timeline.to(this.uniforms.uExplosion, {
       value: 1.0,
       duration: 2.2,
       ease: 'power3.out'
-    }, 12.8);
+    }, 16.2);
 
-    // 13.8s – 15.0s: Desvanecimiento suave y transición al ramo de rosas
+    // 17.2s – 18.5s: Desvanecimiento suave y transición al ramo de rosas
     this.timeline.to(this.uniforms.uOpacity, {
       value: 0.0,
-      duration: 1.2,
+      duration: 1.3,
       ease: 'power2.inOut'
-    }, 13.8);
+    }, 17.2);
 
     // Soporte para saltar a tiempo arbitrario con query param ?t=
     const params = new URLSearchParams(window.location.search);
@@ -828,12 +829,16 @@ export class IntroCinematica {
 
   saltarATiempo(t) {
     const prologoEl = document.getElementById('intro-prologo');
-    if (prologoEl && t >= 3.2) {
-      prologoEl.style.opacity = '0';
-      prologoEl.style.display = 'none';
+    if (prologoEl) {
+      if (t >= 7.6) {
+        prologoEl.style.opacity = '0';
+        prologoEl.style.display = 'none';
+      } else {
+        prologoEl.style.display = 'flex';
+      }
     }
 
-    if (t < 4.0) {
+    if (t < 7.4) {
       this.aplicarFormaInmediata(this.formas.galaxia);
       this.uniforms.uHeartGlow.value = 1.0;
       this.uniforms.uExplosion.value = 0.0;
@@ -841,7 +846,7 @@ export class IntroCinematica {
       this.camera.position.set(0, 1.8, 4.8);
       this.camera.lookAt(0, 0, 0);
       this.camera.fov = 50;
-    } else if (t < 8.2) {
+    } else if (t < 11.8) {
       this.aplicarFormaInmediata(this.formas.nombre);
       this.uniforms.uHeartGlow.value = 1.0;
       this.uniforms.uExplosion.value = 0.0;
@@ -850,9 +855,9 @@ export class IntroCinematica {
       this.camera.position.set(0, 0.0, camZNombre);
       this.camera.lookAt(0, 0, 0);
       this.camera.fov = 50;
-    } else if (t < 12.8) {
+    } else if (t < 16.2) {
       this.aplicarFormaInmediata(this.formas.corazonTeAmo);
-      this.uniforms.uHeartGlow.value = (t > 11.5) ? 2.5 : 1.0;
+      this.uniforms.uHeartGlow.value = (t > 15.0) ? 2.5 : 1.0;
       this.uniforms.uExplosion.value = 0.0;
       this.uniforms.uOpacity.value = 1.0;
       const camZCorazon = (this.camera && this.camera.aspect < 0.8) ? 4.9 : 3.6;
@@ -861,9 +866,9 @@ export class IntroCinematica {
       this.camera.fov = 50;
     } else {
       this.aplicarFormaInmediata(this.formas.corazonTeAmo);
-      const progresoExp = Math.min(1.0, (t - 12.8) / 2.0);
+      const progresoExp = Math.min(1.0, (t - 16.2) / 2.0);
       this.uniforms.uExplosion.value = progresoExp;
-      this.uniforms.uOpacity.value = Math.max(0.0, 1.0 - (t - 13.8) / 1.2);
+      this.uniforms.uOpacity.value = Math.max(0.0, 1.0 - (t - 17.2) / 1.3);
       this.camera.position.set(0, 0.0, 4.0);
       this.camera.lookAt(0, 0, 0);
       this.camera.fov = 50;

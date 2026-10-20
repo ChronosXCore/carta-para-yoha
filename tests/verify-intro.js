@@ -30,10 +30,10 @@ async function verificarIntro() {
 
   // Lista de instantes de la nueva intro: Galaxia -> Yohandry -> Corazón Te amo -> Explosión
   const instantes = [
-    { t: 2.5, desc: '01_intro_t_02s_formacion_galaxia.png' },
-    { t: 6.0, desc: '02_intro_t_06s_nombre_yohandry.png' },
-    { t: 10.0, desc: '03_intro_t_10s_corazon_te_amo.png' },
-    { t: 13.2, desc: '04_intro_t_14s_explosion_particulas.png' }
+    { t: 3.5, desc: '01_intro_t_02s_formacion_galaxia.png' },
+    { t: 9.0, desc: '02_intro_t_06s_nombre_yohandry.png' },
+    { t: 13.5, desc: '03_intro_t_10s_corazon_te_amo.png' },
+    { t: 16.5, desc: '04_intro_t_14s_explosion_particulas.png' }
   ];
 
   for (const item of instantes) {

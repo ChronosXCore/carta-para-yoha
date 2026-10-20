@@ -431,11 +431,11 @@ function abrirCartaYRosas() {
     }
   });
 }
+window.abrirCartaYRosas = abrirCartaYRosas;
 
 // ── Visor de carta dinámico interactivo ──
 function mostrarVisorDinamico() {
   if (!DOM.visorCartaDinamica) return;
-
   DOM.visorCartaDinamica.classList.remove('hidden');
 
   // Construir nodos del tracker de capítulos
@@ -478,6 +478,7 @@ function mostrarVisorDinamico() {
     indicadorTocaRosa.mostrar();
   }, 2500);
 }
+window.mostrarVisorDinamico = mostrarVisorDinamico;
 
 function construirTrackerCapitulos() {
   if (!DOM.trackerNodos) return;

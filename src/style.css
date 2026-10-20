@@ -1033,6 +1033,8 @@ button {
   flex-direction: column;
   gap: 12px;
   position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .cap-header {
@@ -1177,7 +1179,7 @@ button {
 .btn-accion-sec {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   padding: 7px 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
@@ -1185,6 +1187,7 @@ button {
   color: #d1b8d6;
   font-size: 0.78rem;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-accion-sec:hover {
@@ -1193,10 +1196,24 @@ button {
   border-color: rgba(216, 65, 116, 0.4);
 }
 
+.btn-sec-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  line-height: 1;
+}
+
+.btn-sec-icono svg,
 .btn-accion-sec svg {
   width: 14px;
   height: 14px;
   fill: currentColor;
+}
+
+.btn-sec-texto {
+  display: inline;
+  letter-spacing: 0.01em;
 }
 
 /* ═══════════════════════════════════════════
@@ -1754,43 +1771,50 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 580px;
+  width: 92%;
+  max-width: 620px;
   text-align: center;
   z-index: 55;
   pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  padding: 30px 26px;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at center, rgba(12, 3, 20, 0.88) 0%, rgba(12, 3, 20, 0.65) 60%, rgba(12, 3, 20, 0.15) 85%, transparent 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 55px rgba(8, 2, 14, 0.95);
+  border: 1px solid rgba(255, 184, 212, 0.14);
 }
 
 .prologo-sub {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.25rem;
-  color: #ffb8d4;
+  font-size: 1.35rem;
+  color: #ffc2dc;
   letter-spacing: 0.08em;
-  text-shadow: 0 0 15px rgba(255, 140, 180, 0.6);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.85);
 }
 
 .prologo-frase {
   font-family: var(--font-serif);
-  font-size: 2.1rem;
+  font-size: clamp(1.8rem, 4.6vw, 2.45rem);
   font-weight: 600;
   line-height: 1.25;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: 0.02em;
-  text-shadow: 0 0 25px rgba(255, 215, 140, 0.7), 0 0 40px rgba(216, 65, 116, 0.4);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.98), 0 0 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 150, 190, 0.45);
 }
 
 .prologo-destacado {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.4rem;
-  color: #ffd8a8;
+  font-size: 1.5rem;
+  color: #ffe6ba;
   letter-spacing: 0.04em;
-  text-shadow: 0 0 20px rgba(255, 216, 168, 0.8);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95), 0 0 14px rgba(0, 0, 0, 0.85), 0 0 25px rgba(255, 216, 168, 0.5);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1931,18 +1955,23 @@ button {
 
   /* 3. Prólogo cósmico */
   .intro-prologo {
-    width: 90%;
-    padding: 0 12px;
+    width: 92%;
+    padding: 24px 16px;
+    gap: 12px;
+    border-radius: 24px;
+    background: radial-gradient(ellipse at center, rgba(14, 4, 22, 0.92) 0%, rgba(14, 4, 22, 0.78) 55%, rgba(14, 4, 22, 0.25) 80%, transparent 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   .prologo-sub {
-    font-size: 1.05rem;
+    font-size: 1.12rem;
   }
   .prologo-frase {
-    font-size: clamp(1.45rem, 5.8vw, 1.85rem);
-    line-height: 1.26;
+    font-size: clamp(1.5rem, 6.2vw, 1.95rem);
+    line-height: 1.24;
   }
   .prologo-destacado {
-    font-size: 1.15rem;
+    font-size: 1.22rem;
   }
   .btn-saltar-intro {
     top: max(12px, env(safe-area-inset-top, 12px));
@@ -2113,29 +2142,85 @@ button {
     line-height: 1.52;
   }
 
+  /* 6. Navegación de Capítulos — 2 niveles ordenados sin desbordamiento */
   .cap-nav-controles {
-    padding-top: 8px;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "sec sec"
+      "prev next";
+    gap: 10px 8px;
+    padding-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
-  .btn-cap-nav {
-    padding: 8px 12px;
-    font-size: 0.80rem;
-    min-height: 40px;
-    touch-action: manipulation;
-  }
+
   .cap-acciones-secundarias {
-    gap: 5px;
+    grid-area: sec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
   }
+
   .btn-accion-sec {
-    padding: 7px 9px;
-    font-size: 0.72rem;
-    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 11px;
+    font-size: 0.74rem;
+    min-height: 38px;
+    border-radius: 999px;
     touch-action: manipulation;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
-  .btn-cap-siguiente {
-    padding: 8px 14px;
+
+  .btn-sec-icono {
+    display: inline-flex;
+    align-items: center;
     font-size: 0.82rem;
-    min-height: 40px;
+    line-height: 1;
+  }
+
+  .btn-sec-texto {
+    display: inline;
+    font-size: 0.73rem;
+    letter-spacing: 0.01em;
+  }
+
+  #btn-cap-prev {
+    grid-area: prev;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 0.84rem;
+    min-height: 42px;
+    border-radius: 999px;
+    touch-action: manipulation;
+    box-sizing: border-box;
+  }
+
+  #btn-cap-next {
+    grid-area: next;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 0.84rem;
+    min-height: 42px;
+    border-radius: 999px;
+    touch-action: manipulation;
+    box-sizing: border-box;
   }
 
   /* 7. Galería de 12 Recuerdos en iPhone 11 (2 columnas elegantes) */
@@ -2279,7 +2364,7 @@ button {
   .galeria-grid {
     grid-template-columns: 1fr;
   }
-  .btn-accion-sec span {
+  .btn-sec-texto {
     display: none;
   }
   .cap-acciones-secundarias {
